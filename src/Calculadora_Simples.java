@@ -22,86 +22,158 @@ public class Calculadora_Simples {
     private JButton btnLimpar;
     private JLabel txtResultado;
 
-    private double n1 = 0;
+    private Double n1 = 0.0;
+    private Double n2 = 0.0;
     private String operador = "";
-    private boolean novoNumero = true;
+    private Boolean novoNumero = true;
 
     public Calculadora_Simples() {
-        ActionListener adicionarNumero = new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JButton btn = (JButton) e.getSource();
-                String numero = btn.getText();
-
-                if (novoNumero == true) {
-                    txtResultado.setText(numero);
-                    novoNumero = false;
-                } else {
-                    if (txtResultado.getText().length() < 8) {
-                        txtResultado.setText(txtResultado.getText() + numero);
-                    }
-                }
-            }
-        };
-
+        txtResultado.setText("");
         btn1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                adicionarNumero("1");
+                if (novoNumero == true) {
+                    txtResultado.setText("1");
+                    novoNumero = false;
+                } else {
+                    txtResultado.setText(txtResultado.getText() + "1");
+                }
             }
         });
         btn2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                adicionarNumero("2");
+                if (novoNumero == true) {
+                    txtResultado.setText("2");
+                    novoNumero = false;
+                } else {
+                    txtResultado.setText(txtResultado.getText() + "2");
+                }
             }
         });
         btn3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                adicionarNumero("3");
+                if (novoNumero == true) {
+                    txtResultado.setText("3");
+                    novoNumero = false;
+                } else {
+                    txtResultado.setText(txtResultado.getText() + "3");
+                }
             }
         });
         btn4.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                adicionarNumero("4");
+                if (novoNumero == true) {
+                    txtResultado.setText("4");
+                    novoNumero = false;
+                } else {
+                    txtResultado.setText(txtResultado.getText() + "4");
+                }
             }
         });
         btn5.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                adicionarNumero("5");
+                if (novoNumero == true) {
+                    txtResultado.setText("5");
+                    novoNumero = false;
+                } else {
+                    txtResultado.setText(txtResultado.getText() + "5");
+                }
             }
         });
         btn6.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                adicionarNumero("6");
+                if (novoNumero == true) {
+                    txtResultado.setText("6");
+                    novoNumero = false;
+                } else {
+                    txtResultado.setText(txtResultado.getText() + "6");
+                }
             }
         });
         btn7.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                adicionarNumero("7");
+                if (novoNumero == true) {
+                    txtResultado.setText("7");
+                    novoNumero = false;
+                } else {
+                    txtResultado.setText(txtResultado.getText() + "7");
+                }
             }
         });
         btn8.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                adicionarNumero("8");
+                if (novoNumero == true) {
+                    txtResultado.setText("8");
+                    novoNumero = false;
+                } else {
+                    txtResultado.setText(txtResultado.getText() + "8");
+                }
             }
         });
         btn9.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                adicionarNumero("9");
+                if (novoNumero == true) {
+                    txtResultado.setText("9");
+                    novoNumero = false;
+                } else {
+                    txtResultado.setText(txtResultado.getText() + "9");
+                }
             }
         });
+
         btn0.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                adicionarNumero("0");
+                if (novoNumero == true) {
+                    txtResultado.setText("0");
+                    novoNumero = false;
+                } else {
+                    txtResultado.setText(txtResultado.getText() + "0");
+                }
+            }
+        });
+
+        btnSomar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                operador = "+";
+                n1 = Double.parseDouble(txtResultado.getText());
+                novoNumero = true;
+            }
+        });
+
+        btnSubtrair.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                operador = "-";
+                n1 = Double.parseDouble(txtResultado.getText());
+                novoNumero = true;
+            }
+        });
+
+        btnMultiplicar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                operador = "*";
+                n1 = Double.parseDouble(txtResultado.getText());
+                novoNumero = true;
+            }
+        });
+
+        btnDividir.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                operador = "/";
+                n1 = Double.parseDouble(txtResultado.getText());
+                novoNumero = true;
             }
         });
 
@@ -109,99 +181,32 @@ public class Calculadora_Simples {
             @Override
             public void actionPerformed(ActionEvent e) {
                 txtResultado.setText("");
-                n1 = 0;
-                operador = "";
                 novoNumero = true;
-            }
-        });
-
-
-        btnSomar.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                definirOperacao("+");
-            }
-        });
-
-        btnSubtrair.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                definirOperacao("-");
-            }
-        });
-
-        btnMultiplicar.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                definirOperacao("*");
-            }
-        });
-
-        btnDividir.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                definirOperacao("/");
             }
         });
 
         btnResultado.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                realizarOperacao();
-                operador = "";
+                n2 = Double.parseDouble(txtResultado.getText());
+                switch (operador) {
+                    case "+" -> n1 = n1 + n2;
+                    case "-" -> n1 = n1 - n2;
+                    case "*" -> n1 = n1 * n2;
+                    case "/" -> {
+                        if (n2 != 0.0) {
+                            n1 = n1 / n2;
+                        } else {
+                            txtResultado.setText("Erro");
+                        }
+                    }
+                }
+                txtResultado.setText(String.valueOf(n1));
                 novoNumero = true;
             }
         });
     }
 
-    private void adicionarNumero(String numero) {
-        if (novoNumero == true) {
-            txtResultado.setText(numero);
-            novoNumero = false;
-        } else {
-            if (txtResultado.getText().length() < 8) {
-                txtResultado.setText(txtResultado.getText() + numero);
-            }
-        }
-    }
-
-    private void definirOperacao(String op) {
-        if (!novoNumero == true) {
-            realizarOperacao();
-        }
-        operador = op;
-        n1 = Double.parseDouble(txtResultado.getText());
-        novoNumero = true;
-    }
-
-    private void realizarOperacao() {
-        double n2 = Double.parseDouble(txtResultado.getText());
-
-        switch (operador) {
-            case "+":
-                n1 += n2;
-                break;
-            case "-":
-                n1 -= n2;
-                break;
-            case "*":
-                n1 *= n2;
-                break;
-            case "/":
-                if (n2 != 0) {
-                    n1 /= n2;
-                } else {
-                    txtResultado.setText("Erro");
-                    return;
-                }
-                break;
-        }
-        String resultado = String.valueOf(n1);
-        if (resultado.length() > 8) {
-            resultado = resultado.substring(0, 8);
-        }
-        txtResultado.setText(resultado);
-    }
     public static void main(String[] args) {
 
         JFrame frame = new JFrame("Calculadora_Simples");
