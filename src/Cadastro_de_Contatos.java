@@ -33,8 +33,6 @@ public class Cadastro_de_Contatos {
     //Variável que armazena o número de qual elemento da lista está selecionado
     private int indexSelecionado = 0;
 
-    //Criação de uma ArrayList para armazenar as Strings "contato"
-    ArrayList<String> contatos = new ArrayList<>();
 
     //Cria uma instância da "DefaultListModel", com o nome "modeloContatos", que será utilizada como o modelo de dados para a JList
     //Ela é o modelo padrão de lista, como o próprio nome já diz
@@ -62,6 +60,8 @@ public class Cadastro_de_Contatos {
                 //Se o campo "Email" possui uma das strings (domínios) declaradas na verificalção
                 if (nome.isEmpty() || email.isEmpty() || telefone.isEmpty()) {
                     txtAreaStatus.setText("Preencha todos os campos!");
+                } else if (!nome.matches("[a-zA-Z]+")){
+                    txtAreaStatus.setText("O nome só pode conter letras!");
                 } else if (!telefone.matches("[0-9]+")) {
                     txtAreaStatus.setText("O telefone deve conter apenas números!");
                 } else if (telefone.length() < 11 || telefone.length() > 12) {
@@ -74,8 +74,6 @@ public class Cadastro_de_Contatos {
 
                     //Coloca as Strings "nome", "email" e "telefone na String "contato"
                     contato = ("Contato " + i + " | Nome: " + nome + " | Telefone: " + telefone + " | Email: " + email);
-                    //Adiciona a String "contato" na ArrayList "contatos"
-                    contatos.add(contato);
 
                     //Adiciona a String "contato" na ListModel "modeloContatos"
                     modeloContatos.addElement(contato);
