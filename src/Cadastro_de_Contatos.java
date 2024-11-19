@@ -60,7 +60,7 @@ public class Cadastro_de_Contatos {
                 //Se o campo "Email" possui uma das strings (domínios) declaradas na verificalção
                 if (nome.isEmpty() || email.isEmpty() || telefone.isEmpty()) {
                     txtAreaStatus.setText("Preencha todos os campos!");
-                } else if (!nome.matches("[a-zA-Z]+")){
+                } else if (!nome.matches("[a-zA-Z]+")) {
                     txtAreaStatus.setText("O nome só pode conter letras!");
                 } else if (!telefone.matches("[0-9]+")) {
                     txtAreaStatus.setText("O telefone deve conter apenas números!");

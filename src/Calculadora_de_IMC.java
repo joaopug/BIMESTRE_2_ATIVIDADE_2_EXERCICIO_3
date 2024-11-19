@@ -55,30 +55,30 @@ public class Calculadora_de_IMC {
                     lblResultadoIMC.setText("");
                 }
             }
-            });
-        
+        });
+
         btnLimpar.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed (ActionEvent e){
-                    txtPeso.setText("");
-                    txtAltura.setText("");
-                    lblResultadoIMC.setText("");
-                    lblStatus.setText("");
-                    peso = 0.0;
-                    altura = 0.0;
-                    imc = 0.0;
-                }
-            });
-        }
-
-        public static void main (String[]args){
-            JFrame frame = new JFrame("Calculadora_de_IMC");
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setContentPane(new Calculadora_de_IMC().Calculadora_de_IMC);
-            frame.pack();
-            frame.setVisible(true);
-        }
-
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtPeso.setText("");
+                txtAltura.setText("");
+                lblResultadoIMC.setText("");
+                lblStatus.setText("");
+                peso = 0.0;
+                altura = 0.0;
+                imc = 0.0;
+            }
+        });
     }
+
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Calculadora_de_IMC");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setContentPane(new Calculadora_de_IMC().Calculadora_de_IMC);
+        frame.pack();
+        frame.setVisible(true);
+    }
+
+}
 
 
