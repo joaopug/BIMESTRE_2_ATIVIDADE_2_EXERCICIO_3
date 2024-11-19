@@ -4,7 +4,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class Cadastro_de_Contatos {
-    private JPanel Cadastro_de_Contatos;
+    private JPanel panelMain;
     private JTextField txtNome;
     private JTextField txtTelefone;
     private JTextField txtEmail;
@@ -112,7 +112,7 @@ public class Cadastro_de_Contatos {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Cadastro de Contatos");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setContentPane(new Cadastro_de_Contatos().Cadastro_de_Contatos);
+        frame.setContentPane(new Cadastro_de_Contatos().panelMain);
         frame.pack();
         frame.setVisible(true);
     }

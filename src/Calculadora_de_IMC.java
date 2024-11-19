@@ -3,7 +3,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Calculadora_de_IMC {
-    private JPanel Calculadora_de_IMC;
+    private JPanel panelMain;
     private JTextField txtPeso;
     private JTextField txtAltura;
     private JButton btnCalcular;
@@ -74,7 +74,7 @@ public class Calculadora_de_IMC {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Calculadora_de_IMC");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setContentPane(new Calculadora_de_IMC().Calculadora_de_IMC);
+        frame.setContentPane(new Calculadora_de_IMC().panelMain);
         frame.pack();
         frame.setVisible(true);
     }

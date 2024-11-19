@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 
 public class Agenda_Diaria {
-    private JPanel Agenda_Diaria;
+    private JPanel panelMain;
     private JSpinner spnData;
     private JTextField txtCompromisso;
     private JLabel lblComp;
@@ -69,10 +69,9 @@ public class Agenda_Diaria {
             }
         });
     }
-
     public static void main(String[] args) {
         JFrame frame = new JFrame("Agenda Diaria");
-        frame.setContentPane(new Agenda_Diaria().Agenda_Diaria);
+        frame.setContentPane(new Agenda_Diaria().panelMain);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);

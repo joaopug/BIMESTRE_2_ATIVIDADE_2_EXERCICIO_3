@@ -3,11 +3,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Notas_e_Media {
+    private JPanel panelMain;
     private JTextArea txtAreaNotas;
     private JTextField txtNota;
     private JButton btnAdicionar;
     private JButton btnCalcularMedia;
-    private JPanel Aplicativo_de_Notas;
     private JTextArea txtAreaAvaliacao;
     private JButton btnLimpar;
     private JLabel lblAvaliacao;
@@ -69,7 +69,7 @@ public class Notas_e_Media {
         JFrame frame = new JFrame("Notas_e_Media");
         frame.setSize(800, 600);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setContentPane((new Notas_e_Media()).Aplicativo_de_Notas);
+        frame.setContentPane((new Notas_e_Media()).panelMain);
         frame.setVisible(true);
         frame.pack();
     }

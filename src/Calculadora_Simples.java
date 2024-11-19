@@ -3,7 +3,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Calculadora_Simples {
-    private JPanel Calculadora;
+    private JPanel panelMain;
     private JButton btn1;
     private JButton btn2;
     private JButton btn3;
@@ -210,7 +210,7 @@ public class Calculadora_Simples {
     public static void main(String[] args) {
 
         JFrame frame = new JFrame("Calculadora_Simples");
-        frame.setContentPane(new Calculadora_Simples().Calculadora);
+        frame.setContentPane(new Calculadora_Simples().panelMain);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
